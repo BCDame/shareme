@@ -9,17 +9,22 @@ import { client } from '../client';
 const Login = () =>{
     const navigate = useNavigate();
     const responseGoogle = (response) =>{
-        console.log(response)
-        // localStorage.setItem('user', JSON.stringify(response.profileObj));
-        // const { name, googleId, imageUrl } = response.profileObj;
+         console.log(response)
+         localStorage.setItem('user', JSON.stringify({
+            googleId :'a8f52e38-9125-433c-9552-00bd7e5a8d2e',
+         }));
+        //  const { name, googleId, imageUrl } = response.profileObj;
         // const doc = {
         //   _id: googleId,
         //   _type: 'user',
         //   userName: name,
         //   image: imageUrl,
         // };
+
+
+    
         // client.createIfNotExists(doc).then(() => {
-        //   navigate('/', { replace: true });
+           navigate('/', { replace: true });
         // });
     }
     return(
@@ -40,12 +45,13 @@ const Login = () =>{
                 </div>
                 <div className="shadow-2xl">
                     <GoogleLogin 
-                clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
+                    clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
                     render={(renderProps)=> (
                         <button 
                         type="button" 
                         className="bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
-                        onClick={renderProps.onClick}
+                        // onClick={renderProps.onClick}
+                        onClick={responseGoogle}
                         disabled={renderProps.disabled}
                         > 
                         <FcGoogle className="mr-4" />Sign in with Google
