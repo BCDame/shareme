@@ -11,7 +11,7 @@ const Login = () =>{
     const responseGoogle = (response) =>{
          console.log(response)
          localStorage.setItem('user', JSON.stringify({
-            googleId :'a8f52e38-9125-433c-9552-00bd7e5a8d2e',
+            googleId :'f614246c-e46d-4716-877a-a6c02aae404f',
          }));
         //  const { name, googleId, imageUrl } = response.profileObj;
         // const doc = {
@@ -24,7 +24,7 @@ const Login = () =>{
 
     
         // client.createIfNotExists(doc).then(() => {
-           navigate('/', { replace: true });
+         navigate('/', { replace: true });
         // });
     }
     return(
